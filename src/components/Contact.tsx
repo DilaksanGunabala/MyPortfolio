@@ -17,18 +17,31 @@ import {
 export default function Contact() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Open mailto link as fallback
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    window.open(`mailto:gunabaladilaksan1999@gmail.com?subject=${subject}&body=${body}`);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   const contactInfo = [
@@ -122,11 +135,11 @@ export default function Contact() {
                     <div className="p-3 rounded-xl bg-primary-50 dark:bg-primary-950 text-primary-500 group-hover:scale-110 transition-transform duration-200 ease-out">
                       <Icon size={20} />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="text-xs font-medium mb-0.5" style={{ color: "var(--text-tertiary)" }}>
                         {item.label}
                       </div>
-                      <div className="text-sm font-medium" style={{ color: "var(--text-secondary)" }}>
+                      <div className="text-sm font-medium break-all sm:break-normal" style={{ color: "var(--text-secondary)" }}>
                         {item.value}
                       </div>
                     </div>
@@ -248,16 +261,31 @@ export default function Contact() {
               {/* Submit */}
               <motion.button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-shadow"
+                disabled={status === "sending"}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-shadow disabled:opacity-70 disabled:cursor-not-allowed"
                 style={{
-                  background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                  background: status === "sent"
+                    ? "linear-gradient(135deg, #22c55e, #16a34a)"
+                    : status === "error"
+                    ? "linear-gradient(135deg, #ef4444, #dc2626)"
+                    : "linear-gradient(135deg, #6366f1, #8b5cf6)",
                   boxShadow: "0 4px 15px rgba(99, 102, 241, 0.4)",
                 }}
-                whileHover={{ scale: 1.02, boxShadow: "0 6px 25px rgba(99, 102, 241, 0.5)", transition: { type: "spring", stiffness: 400, damping: 25 } }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={status === "idle" ? { scale: 1.02, boxShadow: "0 6px 25px rgba(99, 102, 241, 0.5)", transition: { type: "spring", stiffness: 400, damping: 25 } } : {}}
+                whileTap={status === "idle" ? { scale: 0.98 } : {}}
               >
-                {submitted ? (
+                {status === "sending" ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                    Sending...
+                  </>
+                ) : status === "sent" ? (
                   "Message Sent!"
+                ) : status === "error" ? (
+                  "Failed to send. Try again."
                 ) : (
                   <>
                     <FiSend size={18} />

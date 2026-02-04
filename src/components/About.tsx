@@ -90,7 +90,7 @@ export default function About() {
                 </div>
                 <div className="flex items-center gap-3" style={{ color: "var(--text-secondary)" }}>
                   <FiMail className="text-primary-500 shrink-0" size={18} />
-                  <a href="mailto:gunabaladilaksan1999@gmail.com" className="animated-underline hover:text-primary-500 transition-colors">
+                  <a href="mailto:gunabaladilaksan1999@gmail.com" className="animated-underline hover:text-primary-500 transition-colors break-all text-sm sm:text-base">
                     gunabaladilaksan1999@gmail.com
                   </a>
                 </div>

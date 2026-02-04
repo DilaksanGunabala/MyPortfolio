@@ -20,9 +20,9 @@ export default function Hero() {
     >
       <ParticleBackground />
 
-      {/* Decorative orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 rounded-full opacity-20 blur-3xl" style={{ background: "#6366f1" }} />
-      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full opacity-15 blur-3xl" style={{ background: "#8b5cf6" }} />
+      {/* Decorative orbs - hidden overflow prevents horizontal scroll on mobile */}
+      <div className="absolute top-20 -left-10 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 rounded-full opacity-20 blur-3xl" style={{ background: "#6366f1" }} />
+      <div className="absolute bottom-20 -right-10 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 rounded-full opacity-15 blur-3xl" style={{ background: "#8b5cf6" }} />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-28">
         {/* Greeting badge */}
@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.15 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
         >
           Hi, I&apos;m{" "}
           <span className="gradient-text">Dilaksan</span>
@@ -55,7 +55,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.35, duration: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-semibold"
+            className="text-2xl sm:text-4xl md:text-5xl font-semibold"
             style={{ color: "var(--text-secondary)" }}
           >
             Full-Stack Developer &
@@ -65,7 +65,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-semibold"
+            className="text-2xl sm:text-4xl md:text-5xl font-semibold"
             style={{ color: "var(--text-secondary)" }}
           >
             Data Science Enthusiast
@@ -77,7 +77,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.6 }}
-          className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-base sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed px-2 sm:px-0"
           style={{ color: "var(--text-secondary)" }}
         >
           Computer Engineering undergraduate specializing in full-stack development,
@@ -89,11 +89,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.7 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-8"
+          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8"
         >
           <motion.button
             onClick={() => handleScroll("#projects")}
-            className="px-8 py-3.5 rounded-xl font-semibold text-white shadow-lg transition-shadow duration-300 ease-out"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-semibold text-white shadow-lg transition-shadow duration-300 ease-out"
             style={{
               background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
               boxShadow: "0 4px 15px rgba(99, 102, 241, 0.4)",
@@ -108,7 +108,7 @@ export default function Hero() {
           <motion.a
             href="/resume.pdf"
             download
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold transition-colors duration-300 ease-out"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-semibold transition-colors duration-300 ease-out"
             style={{
               border: "2px solid var(--border-color)",
               color: "var(--text-primary)",
@@ -126,7 +126,7 @@ export default function Hero() {
 
           <motion.button
             onClick={() => handleScroll("#contact")}
-            className="px-8 py-3.5 rounded-xl font-semibold transition-colors duration-300 ease-out"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-semibold transition-colors duration-300 ease-out"
             style={{
               background: "var(--bg-tertiary)",
               color: "var(--text-primary)",

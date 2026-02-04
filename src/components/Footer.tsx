@@ -24,7 +24,7 @@ export default function Footer() {
           </a>
 
           {/* Nav Links */}
-          <div className="flex flex-wrap justify-center gap-6 mb-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6">
             {["Home", "About", "Experience", "Projects", "Skills", "Contact"].map((link) => (
               <a
                 key={link}
@@ -70,8 +70,8 @@ export default function Footer() {
           <div className="w-full h-px mb-6" style={{ background: "var(--border-color)" }} />
 
           {/* Copyright */}
-          <p className="text-sm text-center" style={{ color: "var(--text-tertiary)" }}>
-            &copy; {new Date().getFullYear()} Gunabala Dilaksan. Built by V Jay Dilaks using Next.js & Tailwind CSS. 
+          <p className="text-xs sm:text-sm text-center px-4" style={{ color: "var(--text-tertiary)" }}>
+            &copy; {new Date().getFullYear()} Gunabala Dilaksan. Built by V Jay Dilaks using Next.js & Tailwind CSS.
             {/*<FiHeart className="inline text-red-500" size={14} />{" "}*/}
             
           </p>
