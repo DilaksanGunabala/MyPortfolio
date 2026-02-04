@@ -57,7 +57,7 @@ export default function Footer() {
                     color: "var(--text-secondary)",
                   }}
                   whileHover={{ y: -3, scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 25 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   aria-label={social.label}
                 >
                   <Icon size={18} />
@@ -88,7 +88,7 @@ export default function Footer() {
         }}
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 500, damping: 25 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         aria-label="Scroll to top"

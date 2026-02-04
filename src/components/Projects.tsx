@@ -126,7 +126,7 @@ export default function Projects() {
               whileHover={{
                 y: -8,
                 boxShadow: "0 20px 40px -12px rgba(99, 102, 241, 0.15)",
-                transition: { type: "spring", stiffness: 500, damping: 25 },
+                transition: { type: "spring", stiffness: 300, damping: 30 },
               }}
             >
               {/* Color accent bar */}
@@ -136,7 +136,7 @@ export default function Projects() {
                 {/* Icon and links */}
                 <div className="flex items-center justify-between mb-4">
                   <div
-                    className="p-3 rounded-xl transition-transform duration-150 group-hover:scale-110"
+                    className="p-3 rounded-xl transition-transform duration-300 ease-out group-hover:scale-110"
                     style={{ background: `${project.color}15`, color: project.color }}
                   >
                     <FiFolder size={24} />
@@ -147,7 +147,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-lg transition-colors duration-150 hover:text-primary-500"
+                        className="p-2 rounded-lg transition-colors duration-300 ease-out hover:text-primary-500"
                         style={{ color: "var(--text-tertiary)" }}
                         aria-label={`${project.title} GitHub`}
                       >
@@ -158,7 +158,7 @@ export default function Projects() {
                       href={project.github || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg transition-colors duration-150 hover:text-primary-500"
+                      className="p-2 rounded-lg transition-colors duration-300 ease-out hover:text-primary-500"
                       style={{ color: "var(--text-tertiary)" }}
                       aria-label={`${project.title} link`}
                     >
@@ -168,7 +168,7 @@ export default function Projects() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold mb-2 leading-snug group-hover:text-primary-500 transition-colors duration-150">
+                <h3 className="text-lg font-bold mb-2 leading-snug group-hover:text-primary-500 transition-colors duration-300 ease-out">
                   {project.title}
                 </h3>
 
@@ -219,7 +219,7 @@ export default function Projects() {
             }}
             whileHover={{ scale: 1.05, borderColor: "#6366f1" }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 500, damping: 25 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <FiGithub size={18} />
             View All Projects on GitHub

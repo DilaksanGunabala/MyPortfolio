@@ -56,7 +56,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-150 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
           scrolled
             ? "py-3 shadow-lg"
             : "py-5"
@@ -91,7 +91,7 @@ export default function Navbar() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-100 ${
+                className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ease-out ${
                   activeSection === link.href.slice(1)
                     ? "text-primary-600 dark:text-primary-400"
                     : "hover:text-primary-600 dark:hover:text-primary-400"
@@ -117,7 +117,7 @@ export default function Navbar() {
               style={{ background: "var(--bg-tertiary)" }}
               whileHover={{ scale: 1.1, rotate: 15 }}
               whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 500, damping: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (

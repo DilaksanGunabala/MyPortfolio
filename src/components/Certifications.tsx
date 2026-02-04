@@ -50,14 +50,14 @@ export default function Certifications() {
                 border: "1px solid var(--border-color)",
                 boxShadow: "var(--card-shadow)",
               }}
-              whileHover={{ y: -4, boxShadow: "var(--card-shadow-hover)", transition: { type: "spring", stiffness: 500, damping: 25 } }}
+              whileHover={{ y: -4, boxShadow: "var(--card-shadow-hover)", transition: { type: "spring", stiffness: 300, damping: 30 } }}
             >
               {/* Accent */}
               <div className="absolute top-0 left-0 right-0 h-1" style={{ background: cert.color }} />
 
               <div className="flex items-start gap-4">
                 <div
-                  className="p-3 rounded-xl shrink-0 group-hover:scale-110 transition-transform duration-150"
+                  className="p-3 rounded-xl shrink-0 group-hover:scale-110 transition-transform duration-300 ease-out"
                   style={{ background: `${cert.color}15`, color: cert.color }}
                 >
                   <FiAward size={24} />
@@ -70,7 +70,7 @@ export default function Certifications() {
                 </div>
                 <FiExternalLink
                   size={16}
-                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-150 shrink-0 mt-1"
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out shrink-0 mt-1"
                   style={{ color: "var(--text-tertiary)" }}
                 />
               </div>

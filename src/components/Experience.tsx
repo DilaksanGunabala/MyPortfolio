@@ -47,7 +47,7 @@ export default function Experience() {
             <div className="absolute -left-[calc(2rem+6px)] top-8 w-3.5 h-3.5 rounded-full bg-primary-500 hidden sm:block pulse-glow" />
 
             <div
-              className="rounded-2xl p-6 sm:p-8 transition-all duration-150"
+              className="rounded-2xl p-6 sm:p-8 transition-all duration-300 ease-out"
               style={{
                 background: "var(--card-bg)",
                 border: "1px solid var(--border-color)",

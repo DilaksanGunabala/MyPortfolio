@@ -93,14 +93,14 @@ export default function Hero() {
         >
           <motion.button
             onClick={() => handleScroll("#projects")}
-            className="px-8 py-3.5 rounded-xl font-semibold text-white shadow-lg transition-shadow"
+            className="px-8 py-3.5 rounded-xl font-semibold text-white shadow-lg transition-shadow duration-300 ease-out"
             style={{
               background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
               boxShadow: "0 4px 15px rgba(99, 102, 241, 0.4)",
             }}
             whileHover={{ scale: 1.05, boxShadow: "0 6px 25px rgba(99, 102, 241, 0.5)" }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 500, damping: 20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             View Projects
           </motion.button>
@@ -108,7 +108,7 @@ export default function Hero() {
           <motion.a
             href="/resume.pdf"
             download
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold transition-colors duration-300 ease-out"
             style={{
               border: "2px solid var(--border-color)",
               color: "var(--text-primary)",
@@ -118,7 +118,7 @@ export default function Hero() {
               borderColor: "#6366f1",
             }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 500, damping: 20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <FiDownload size={18} />
             Download CV
@@ -126,14 +126,14 @@ export default function Hero() {
 
           <motion.button
             onClick={() => handleScroll("#contact")}
-            className="px-8 py-3.5 rounded-xl font-semibold transition-colors"
+            className="px-8 py-3.5 rounded-xl font-semibold transition-colors duration-300 ease-out"
             style={{
               background: "var(--bg-tertiary)",
               color: "var(--text-primary)",
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 500, damping: 20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             Contact Me
           </motion.button>
@@ -150,11 +150,11 @@ export default function Hero() {
             href="https://github.com/DilaksanGunabala"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-xl transition-colors"
+            className="p-3 rounded-xl transition-colors duration-300 ease-out"
             style={{ background: "var(--bg-tertiary)", color: "var(--text-secondary)" }}
             whileHover={{ scale: 1.1, y: -3 }}
             whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 500, damping: 20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             aria-label="GitHub"
           >
             <FiGithub size={22} />
@@ -163,11 +163,11 @@ export default function Hero() {
             href="https://www.linkedin.com/in/gunabala-dilaksan-0ba2b326a/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-xl transition-colors"
+            className="p-3 rounded-xl transition-colors duration-300 ease-out"
             style={{ background: "var(--bg-tertiary)", color: "var(--text-secondary)" }}
             whileHover={{ scale: 1.1, y: -3 }}
             whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 500, damping: 20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             aria-label="LinkedIn"
           >
             <FiLinkedin size={22} />

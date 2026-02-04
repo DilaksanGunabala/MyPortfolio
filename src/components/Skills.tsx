@@ -155,12 +155,12 @@ export default function Skills() {
                   border: "1px solid var(--border-color)",
                   boxShadow: "var(--card-shadow)",
                 }}
-                whileHover={{ y: -4, boxShadow: "var(--card-shadow-hover)", transition: { type: "spring", stiffness: 500, damping: 25 } }}
+                whileHover={{ y: -4, boxShadow: "var(--card-shadow-hover)", transition: { type: "spring", stiffness: 300, damping: 30 } }}
               >
                 {/* Category header */}
                 <div className="flex items-center gap-3 mb-5">
                   <div
-                    className="p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-150"
+                    className="p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-300 ease-out"
                     style={{ background: `${cat.color}15`, color: cat.color }}
                   >
                     <Icon size={22} />

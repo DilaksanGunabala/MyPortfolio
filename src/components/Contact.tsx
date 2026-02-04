@@ -112,14 +112,14 @@ export default function Contact() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-                    className="flex items-center gap-4 p-4 rounded-xl transition-all duration-150 group"
+                    className="flex items-center gap-4 p-4 rounded-xl transition-all duration-200 ease-out group"
                     style={{
                       background: "var(--card-bg)",
                       border: "1px solid var(--border-color)",
                     }}
-                    whileHover={{ x: 8, transition: { type: "spring", stiffness: 500, damping: 25 } }}
+                    whileHover={{ x: 8, transition: { type: "spring", stiffness: 300, damping: 20 } }}
                   >
-                    <div className="p-3 rounded-xl bg-primary-50 dark:bg-primary-950 text-primary-500 group-hover:scale-110 transition-transform duration-150">
+                    <div className="p-3 rounded-xl bg-primary-50 dark:bg-primary-950 text-primary-500 group-hover:scale-110 transition-transform duration-200 ease-out">
                       <Icon size={20} />
                     </div>
                     <div>
@@ -149,13 +149,13 @@ export default function Contact() {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.3, delay: 0.6 + i * 0.1 }}
-                    className="p-3 rounded-xl transition-all duration-150"
+                    className="p-3 rounded-xl transition-all duration-200 ease-out"
                     style={{
                       background: "var(--card-bg)",
                       border: "1px solid var(--border-color)",
                       color: "var(--text-secondary)",
                     }}
-                    whileHover={{ y: -4, scale: 1.1, color: social.color, transition: { type: "spring", stiffness: 500, damping: 25 } }}
+                    whileHover={{ y: -4, scale: 1.1, color: social.color, transition: { type: "spring", stiffness: 400, damping: 25 } }}
                     aria-label={social.label}
                   >
                     <Icon size={22} />
@@ -194,7 +194,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="John Doe"
-                  className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-150 focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-300 ease-out focus:ring-2 focus:ring-primary-500"
                   style={{
                     background: "var(--bg-secondary)",
                     border: "1px solid var(--border-color)",
@@ -215,7 +215,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="john@example.com"
-                  className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-150 focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-300 ease-out focus:ring-2 focus:ring-primary-500"
                   style={{
                     background: "var(--bg-secondary)",
                     border: "1px solid var(--border-color)",
@@ -236,7 +236,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell me about your project..."
-                  className="w-full px-4 py-3 rounded-xl text-sm outline-none resize-none transition-all duration-150 focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-4 py-3 rounded-xl text-sm outline-none resize-none transition-all duration-300 ease-out focus:ring-2 focus:ring-primary-500"
                   style={{
                     background: "var(--bg-secondary)",
                     border: "1px solid var(--border-color)",
@@ -253,7 +253,7 @@ export default function Contact() {
                   background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
                   boxShadow: "0 4px 15px rgba(99, 102, 241, 0.4)",
                 }}
-                whileHover={{ scale: 1.02, boxShadow: "0 6px 25px rgba(99, 102, 241, 0.5)", transition: { type: "spring", stiffness: 500, damping: 25 } }}
+                whileHover={{ scale: 1.02, boxShadow: "0 6px 25px rgba(99, 102, 241, 0.5)", transition: { type: "spring", stiffness: 400, damping: 25 } }}
                 whileTap={{ scale: 0.98 }}
               >
                 {submitted ? (

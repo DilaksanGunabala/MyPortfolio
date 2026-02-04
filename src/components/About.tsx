@@ -36,7 +36,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.9, delay: 0.1 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -113,17 +113,17 @@ export default function About() {
                   key={item.title}
                   initial={{ opacity: 0, x: 40 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.15 }}
-                  className="group rounded-2xl p-6 cursor-default transition-all duration-150"
+                  transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
+                  className="group rounded-2xl p-6 cursor-default transition-all duration-200 ease-out"
                   style={{
                     background: "var(--card-bg)",
                     border: "1px solid var(--border-color)",
                     boxShadow: "var(--card-shadow)",
                   }}
-                  whileHover={{ x: 8, boxShadow: "var(--card-shadow-hover)", transition: { type: "spring", stiffness: 500, damping: 25 } }}
+                  whileHover={{ x: 8,y: -5, scale: 1.03, boxShadow: "var(--card-shadow-hover)", transition: { type: "spring", stiffness: 300, damping: 20 } }}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-primary-50 dark:bg-primary-950 text-primary-600 dark:text-primary-400 shrink-0 group-hover:scale-110 transition-transform duration-150">
+                    <div className="p-3 rounded-xl bg-primary-50 dark:bg-primary-950 text-primary-600 dark:text-primary-400 shrink-0 group-hover:scale-110 transition-transform duration-200 ease-out">
                       <Icon size={24} />
                     </div>
                     <div>

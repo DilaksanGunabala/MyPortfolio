@@ -112,7 +112,7 @@ body {
   bottom: -2px;
   left: 0;
   background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-400));
-  transition: width 0.15s ease;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animated-underline:hover::after {
@@ -125,7 +125,7 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   box-shadow: var(--card-shadow);
-  transition: all 0.15s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {

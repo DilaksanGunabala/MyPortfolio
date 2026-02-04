@@ -56,12 +56,12 @@ export default function Volunteering() {
                   border: "1px solid var(--border-color)",
                   boxShadow: "var(--card-shadow)",
                 }}
-                whileHover={{ y: -4, boxShadow: "var(--card-shadow-hover)", transition: { type: "spring", stiffness: 500, damping: 25 } }}
+                whileHover={{ y: -4, boxShadow: "var(--card-shadow-hover)", transition: { type: "spring", stiffness: 300, damping: 30 } }}
               >
                 <div className="absolute top-0 left-0 right-0 h-1" style={{ background: act.color }} />
 
                 <div
-                  className="p-3 rounded-xl inline-flex mb-4 group-hover:scale-110 transition-transform duration-150"
+                  className="p-3 rounded-xl inline-flex mb-4 group-hover:scale-110 transition-transform duration-300 ease-out"
                   style={{ background: `${act.color}15`, color: act.color }}
                 >
                   <Icon size={24} />
