@@ -78,7 +78,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="gradient-text">&lt;Dilaksan /&gt;</span>
+            <span className="gradient-text">Dilaksan </span>
           </motion.a>
 
           {/* Desktop Nav */}
